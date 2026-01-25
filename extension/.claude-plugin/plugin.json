@@ -1,0 +1,17 @@
+{
+  "name": "claude-recall",
+  "version": "9.0.9",
+  "description": "Persistent memory system for Claude Code - seamlessly preserve context across sessions",
+  "author": {
+    "name": ""
+  },
+  "repository": "https://github.com/nhevers/claude-recall",
+  "license": "AGPL-3.0",
+  "keywords": [
+    "memory",
+    "context",
+    "persistence",
+    "hooks",
+    "mcp"
+  ]
+}
