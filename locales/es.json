@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "locale": "es",
+    "name": "Español",
+    "direction": "ltr"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "refresh": "Actualizar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "all": "Todo",
+    "none": "Ninguno",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "nav": {
+    "timeline": "Línea de tiempo",
+    "sessions": "Sesiones",
+    "search": "Buscar",
+    "settings": "Configuración",
+    "favorites": "Favoritos",
+    "tags": "Etiquetas",
+    "stats": "Estadísticas"
+  },
+  "timeline": {
+    "title": "Línea de tiempo",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "thisWeek": "Esta semana",
+    "thisMonth": "Este mes",
+    "older": "Más antiguo",
+    "noObservations": "Sin observaciones todavía",
+    "loadMore": "Cargar más"
+  },
+  "session": {
+    "title": "Sesión",
+    "summary": "Resumen",
+    "observations": "Observaciones",
+    "duration": "Duración",
+    "prompts": "Prompts",
+    "filesModified": "Archivos modificados",
+    "filesRead": "Archivos leídos",
+    "tokensUsed": "Tokens usados",
+    "noSummary": "Sin resumen disponible"
+  },
+  "observation": {
+    "types": {
+      "discovery": "Descubrimiento",
+      "decision": "Decisión",
+      "implementation": "Implementación",
+      "issue": "Problema",
+      "learning": "Aprendizaje",
+      "reference": "Referencia"
+    },
+    "facts": "Hechos clave",
+    "concepts": "Conceptos",
+    "files": "Archivos",
+    "addToFavorites": "Añadir a favoritos",
+    "removeFromFavorites": "Quitar de favoritos"
+  },
+  "search": {
+    "placeholder": "Buscar observaciones...",
+    "noResults": "Sin resultados",
+    "resultsCount": "{{count}} resultados",
+    "filters": {
+      "type": "Tipo",
+      "project": "Proyecto",
+      "dateRange": "Rango de fechas",
+      "favorites": "Solo favoritos"
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "general": "General",
+    "appearance": "Apariencia",
+    "advanced": "Avanzado",
+    "theme": {
+      "label": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    },
+    "language": {
+      "label": "Idioma"
+    },
+    "provider": {
+      "label": "Proveedor de IA",
+      "claude": "Claude",
+      "gemini": "Gemini",
+      "openrouter": "OpenRouter"
+    },
+    "mode": {
+      "label": "Modo de observación"
+    },
+    "port": {
+      "label": "Puerto del servidor"
+    },
+    "saved": "Configuración guardada"
+  },
+  "export": {
+    "title": "Exportar datos",
+    "format": "Formato",
+    "dateRange": "Rango de fechas",
+    "project": "Proyecto",
+    "includeObservations": "Incluir observaciones",
+    "includeSummaries": "Incluir resúmenes",
+    "download": "Descargar"
+  },
+  "stats": {
+    "title": "Estadísticas",
+    "totalObservations": "Total de observaciones",
+    "totalSessions": "Total de sesiones",
+    "totalProjects": "Proyectos",
+    "tokensUsed": "Tokens usados",
+    "byType": "Por tipo",
+    "byProject": "Por proyecto",
+    "overTime": "A lo largo del tiempo"
+  },
+  "errors": {
+    "generic": "Algo salió mal",
+    "notFound": "No encontrado",
+    "networkError": "Error de red",
+    "serverError": "Error del servidor",
+    "unauthorized": "No autorizado"
+  },
+  "time": {
+    "justNow": "Ahora mismo",
+    "minutesAgo": "Hace {{count}} minutos",
+    "hoursAgo": "Hace {{count}} horas",
+    "daysAgo": "Hace {{count}} días",
+    "weeksAgo": "Hace {{count}} semanas"
+  }
+}
