@@ -1,0 +1,101 @@
+{
+  "snippets": [
+    {
+      "id": "search-observations",
+      "name": "Search Observations",
+      "description": "Search through observations by query",
+      "code": "const results = await fetch('http://localhost:37777/api/search?q=YOUR_QUERY');\nconst data = await results.json();\nconsole.log(data.results);",
+      "language": "javascript",
+      "tags": ["api", "search"]
+    },
+    {
+      "id": "get-timeline",
+      "name": "Get Timeline",
+      "description": "Fetch timeline for a project",
+      "code": "const response = await fetch('http://localhost:37777/api/timeline?project=PROJECT_NAME&days=7');\nconst timeline = await response.json();\nconsole.log(timeline);",
+      "language": "javascript",
+      "tags": ["api", "timeline"]
+    },
+    {
+      "id": "export-json",
+      "name": "Export to JSON",
+      "description": "Export all data as JSON",
+      "code": "curl -s 'http://localhost:37777/api/export?format=json' > backup.json",
+      "language": "bash",
+      "tags": ["export", "backup"]
+    },
+    {
+      "id": "export-csv",
+      "name": "Export to CSV",
+      "description": "Export observations as CSV",
+      "code": "curl -s 'http://localhost:37777/api/export?format=csv' > observations.csv",
+      "language": "bash",
+      "tags": ["export", "csv"]
+    },
+    {
+      "id": "health-check",
+      "name": "Health Check",
+      "description": "Check if the worker is running",
+      "code": "curl -s http://localhost:37777/health | jq",
+      "language": "bash",
+      "tags": ["health", "status"]
+    },
+    {
+      "id": "get-stats",
+      "name": "Get Statistics",
+      "description": "Fetch memory statistics",
+      "code": "const stats = await fetch('http://localhost:37777/api/stats');\nconst data = await stats.json();\nconsole.log(`Total observations: ${data.total_observations}`);\nconsole.log(`Total sessions: ${data.total_sessions}`);",
+      "language": "javascript",
+      "tags": ["api", "stats"]
+    },
+    {
+      "id": "filter-by-type",
+      "name": "Filter by Type",
+      "description": "Get observations of a specific type",
+      "code": "const response = await fetch('http://localhost:37777/api/search?type=discovery');\nconst discoveries = await response.json();\nconsole.log(discoveries.results);",
+      "language": "javascript",
+      "tags": ["api", "filter"]
+    },
+    {
+      "id": "recent-sessions",
+      "name": "Recent Sessions",
+      "description": "Get recent sessions",
+      "code": "const response = await fetch('http://localhost:37777/api/sessions?limit=5');\nconst sessions = await response.json();\nsessions.forEach(s => console.log(`${s.project}: ${s.observation_count} observations`));",
+      "language": "javascript",
+      "tags": ["api", "sessions"]
+    },
+    {
+      "id": "python-search",
+      "name": "Python Search",
+      "description": "Search observations using Python",
+      "code": "import requests\n\nresponse = requests.get(\n    'http://localhost:37777/api/search',\n    params={'q': 'authentication', 'limit': 10}\n)\n\nfor obs in response.json()['results']:\n    print(f\"{obs['type']}: {obs['title']}\")",
+      "language": "python",
+      "tags": ["api", "python", "search"]
+    },
+    {
+      "id": "sse-stream",
+      "name": "SSE Stream",
+      "description": "Subscribe to real-time updates",
+      "code": "const eventSource = new EventSource('http://localhost:37777/stream');\n\neventSource.addEventListener('observation', (event) => {\n  const obs = JSON.parse(event.data);\n  console.log('New observation:', obs.title);\n});\n\neventSource.addEventListener('summary', (event) => {\n  const summary = JSON.parse(event.data);\n  console.log('Session complete:', summary.session_id);\n});",
+      "language": "javascript",
+      "tags": ["api", "sse", "realtime"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "api",
+      "name": "API Usage",
+      "description": "Common API patterns"
+    },
+    {
+      "id": "export",
+      "name": "Export & Backup",
+      "description": "Data export snippets"
+    },
+    {
+      "id": "search",
+      "name": "Search & Filter",
+      "description": "Search and filtering patterns"
+    }
+  ]
+}
