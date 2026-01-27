@@ -1,0 +1,28 @@
+{{!-- Minimal Summary Template --}}
+{{!-- Generates compact summaries optimized for token efficiency --}}
+
+# {{session.project}} | {{formatDate session.created_at "MMM D"}}
+
+{{#if summary}}
+**Done:** {{truncate summary.completed 200}}
+{{#if summary.learned}}
+**Learned:** {{truncate summary.learned 150}}
+{{/if}}
+{{#if summary.next_steps}}
+**Next:** {{truncate summary.next_steps 100}}
+{{/if}}
+{{/if}}
+
+## Key Points ({{observations.length}})
+
+{{#each (take observations 10)}}
+- **{{this.type}}:** {{this.title}}{{#if this.concepts}} [{{join this.concepts ", "}}]{{/if}}
+{{/each}}
+
+{{#if (gt observations.length 10)}}
+*...and {{subtract observations.length 10}} more observations*
+{{/if}}
+
+---
+
+Files: {{uniqueCount observations "files_modified"}} modified | Concepts: {{uniqueCount observations "concepts"}}
