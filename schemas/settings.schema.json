@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://claude-recall.dev/schemas/settings.json",
+  "title": "claude-recall Settings",
+  "description": "Configuration schema for claude-recall settings",
+  "type": "object",
+  "properties": {
+    "CLAUDE_RECALL_PROVIDER": {
+      "type": "string",
+      "enum": ["claude", "gemini", "openrouter"],
+      "default": "claude",
+      "description": "AI provider for observation extraction"
+    },
+    "CLAUDE_RECALL_MODE": {
+      "type": "string",
+      "default": "code",
+      "description": "Active observation mode"
+    },
+    "CLAUDE_RECALL_WORKER_PORT": {
+      "type": "integer",
+      "minimum": 1024,
+      "maximum": 65535,
+      "default": 37777,
+      "description": "HTTP server port"
+    },
+    "CLAUDE_RECALL_WORKER_HOST": {
+      "type": "string",
+      "default": "127.0.0.1",
+      "description": "HTTP server host"
+    },
+    "CLAUDE_RECALL_LOG_LEVEL": {
+      "type": "string",
+      "enum": ["debug", "info", "warn", "error"],
+      "default": "info",
+      "description": "Logging verbosity"
+    },
+    "CLAUDE_RECALL_MAX_CONTEXT_TOKENS": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 100000,
+      "default": 8000,
+      "description": "Maximum tokens for context injection"
+    },
+    "CLAUDE_RECALL_CHROMA_ENABLED": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable vector search with ChromaDB"
+    },
+    "CLAUDE_RECALL_AUTO_SUMMARIZE": {
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically generate session summaries"
+    },
+    "CLAUDE_RECALL_THEME": {
+      "type": "string",
+      "enum": ["light", "dark", "system"],
+      "default": "system",
+      "description": "UI theme preference"
+    },
+    "CLAUDE_RECALL_EXPORT_FORMAT": {
+      "type": "string",
+      "enum": ["json", "csv", "markdown"],
+      "default": "json",
+      "description": "Default export format"
+    },
+    "OPENROUTER_API_KEY": {
+      "type": "string",
+      "description": "OpenRouter API key (if using openrouter provider)"
+    },
+    "GEMINI_API_KEY": {
+      "type": "string",
+      "description": "Google Gemini API key (if using gemini provider)"
+    }
+  },
+  "additionalProperties": false
+}
