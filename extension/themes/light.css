@@ -1,0 +1,200 @@
+/**
+ * Light Theme for claude-recall Web Viewer
+ */
+
+:root[data-theme="light"] {
+  /* Base colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-tertiary: #eaeef2;
+  --bg-hover: #d0d7de;
+  
+  /* Text colors */
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --text-muted: #8c959f;
+  --text-link: #0969da;
+  
+  /* Border colors */
+  --border-default: #d0d7de;
+  --border-muted: #eaeef2;
+  
+  /* Accent colors */
+  --accent-blue: #0969da;
+  --accent-green: #1a7f37;
+  --accent-yellow: #9a6700;
+  --accent-red: #cf222e;
+  --accent-purple: #8250df;
+  --accent-cyan: #0550ae;
+  
+  /* Observation type colors */
+  --type-discovery: #0969da;
+  --type-decision: #8250df;
+  --type-implementation: #1a7f37;
+  --type-issue: #cf222e;
+  --type-learning: #9a6700;
+  --type-reference: #0550ae;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(31, 35, 40, 0.04);
+  --shadow-md: 0 3px 6px rgba(31, 35, 40, 0.08);
+  --shadow-lg: 0 8px 24px rgba(31, 35, 40, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* Body */
+body[data-theme="light"] {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Observation cards */
+.observation-card {
+  border-left: 3px solid var(--border-default);
+}
+
+.observation-card[data-type="discovery"] {
+  border-left-color: var(--type-discovery);
+}
+
+.observation-card[data-type="decision"] {
+  border-left-color: var(--type-decision);
+}
+
+.observation-card[data-type="implementation"] {
+  border-left-color: var(--type-implementation);
+}
+
+.observation-card[data-type="issue"] {
+  border-left-color: var(--type-issue);
+}
+
+.observation-card[data-type="learning"] {
+  border-left-color: var(--type-learning);
+}
+
+.observation-card[data-type="reference"] {
+  border-left-color: var(--type-reference);
+}
+
+/* Buttons */
+.btn {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--bg-tertiary);
+}
+
+.btn-primary {
+  background: #1f883d;
+  border-color: #1f883d;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #1a7f37;
+}
+
+/* Inputs */
+input, textarea, select {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+}
+
+/* Code blocks */
+pre, code {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-hover);
+}
+
+/* Selection */
+::selection {
+  background: rgba(9, 105, 218, 0.2);
+}
+
+/* Links */
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tags */
+.tag {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-blue { background: rgba(9, 105, 218, 0.1); color: var(--accent-blue); }
+.badge-green { background: rgba(26, 127, 55, 0.1); color: var(--accent-green); }
+.badge-yellow { background: rgba(154, 103, 0, 0.1); color: var(--accent-yellow); }
+.badge-red { background: rgba(207, 34, 46, 0.1); color: var(--accent-red); }
+.badge-purple { background: rgba(130, 80, 223, 0.1); color: var(--accent-purple); }
