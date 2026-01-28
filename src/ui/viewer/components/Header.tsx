@@ -31,7 +31,7 @@ export function Header({
             src="logoclauderecall.png" 
             alt="claude-recall" 
             className={`logo-icon ${isProcessing ? 'spinning' : ''}`}
-            style={{ width: '24px', height: '24px', display: 'block' }}
+            style={{ width: '72px', height: '72px', display: 'block' }}
           />
           {queueDepth > 0 && (
             <div className="queue-bubble">
