@@ -1,12 +1,12 @@
-# Claude Recall for Clawd
+# Claude Recall for MoltBot
 
-Long-term memory extension for [Clawd](https://github.com/moltbot/moltbot) that learns and recalls your context automatically.
+Long-term memory extension for [MoltBot](https://github.com/moltbot/moltbot) that learns and recalls your context automatically.
 
 ## Installation
 
-### Option 1: As Clawd Extension
+### Option 1: As MoltBot Extension
 
-Add to your Clawd `extensions/` folder:
+Add to your MoltBot `extensions/` folder:
 
 ```bash
 cd your-clawd-installation/extensions
@@ -15,7 +15,7 @@ cd claude-recall/integrations/clawd
 npm install && npm run build
 ```
 
-Then add to your Clawd config:
+Then add to your MoltBot config:
 
 ```json
 {
@@ -29,15 +29,15 @@ Then add to your Clawd config:
 }
 ```
 
-### Option 2: As Clawd Skill
+### Option 2: As MoltBot Skill
 
-Copy `skill.json` to your Clawd skills directory:
+Copy `skill.json` to your MoltBot skills directory:
 
 ```bash
-cp integrations/clawd/skill.json ~/.clawd/skills/claude-recall.json
+cp integrations/clawd/skill.json ~/.moltbot/skills/claude-recall.json
 ```
 
-Configure in your Clawd config:
+Configure in your MoltBot config:
 
 ```json
 {
@@ -58,7 +58,7 @@ Start the MCP server:
 npm run mcp:start
 ```
 
-Add to your Clawd MCP config:
+Add to your MoltBot MCP config:
 
 ```json
 {
@@ -77,7 +77,7 @@ Add to your Clawd MCP config:
 
 ### Automatic Memory Capture
 
-The extension hooks into Clawd's agent loop to automatically capture:
+The extension hooks into MoltBot's agent loop to automatically capture:
 
 - **Preferences**: User-stated preferences and likes/dislikes
 - **Decisions**: Important decisions made during conversations
@@ -86,11 +86,11 @@ The extension hooks into Clawd's agent loop to automatically capture:
 
 ### Context Injection
 
-Before each response, relevant memories are automatically injected into the context, giving Clawd awareness of past interactions.
+Before each response, relevant memories are automatically injected into the context, giving MoltBot awareness of past interactions.
 
 ### Multi-Channel Support
 
-Works across all Clawd channels:
+Works across all MoltBot channels:
 - Discord
 - Slack
 - iMessage
@@ -139,7 +139,7 @@ save_memory("Always use prepared statements for SQL queries", type="preference")
 
 ### Hooks
 
-The extension implements these Clawd lifecycle hooks:
+The extension implements these MoltBot lifecycle hooks:
 
 - `onSessionStart`: Initialize session memory
 - `onMessage`: Inject relevant context
