@@ -1,10 +1,10 @@
-# Clawd Integration Guide
+# MoltBot Integration Guide
 
-This guide covers integrating claude-recall with [Clawd](https://github.com/moltbot/moltbot), the popular personal AI assistant.
+This guide covers integrating claude-recall with [MoltBot](https://github.com/moltbot/moltbot), the popular personal AI assistant.
 
 ## Overview
 
-Claude Recall provides three integration methods for Clawd:
+Claude Recall provides three integration methods for MoltBot:
 
 1. **Extension**: Full integration with Clawd's extension system
 2. **Skill**: Lightweight tool-based integration
@@ -15,8 +15,8 @@ Claude Recall provides three integration methods for Clawd:
 ### Extension (Recommended)
 
 ```bash
-# Clone into Clawd extensions
-cd ~/.clawd/extensions
+# Clone into MoltBot extensions
+cd ~/.moltbot/extensions
 git clone https://github.com/nhevers/claude-recall.git
 
 # Build the extension
@@ -24,7 +24,7 @@ cd claude-recall/integrations/clawd
 npm install && npm run build
 ```
 
-Add to `~/.clawd/config.json`:
+Add to `~/.moltbot/config.json`:
 
 ```json
 {
@@ -36,14 +36,14 @@ Add to `~/.clawd/config.json`:
 }
 ```
 
-Restart Clawd and you're done!
+Restart MoltBot and you're done!
 
 ## How It Works
 
 ### Memory Flow
 
 ```
-User Message → Clawd → claude-recall hooks
+User Message → MoltBot → claude-recall hooks
                            ↓
                     Search relevant memories
                            ↓
@@ -118,7 +118,7 @@ Before each response, claude-recall searches for relevant memories and injects t
     "servers": {
       "claude-recall": {
         "command": "node",
-        "args": ["~/.clawd/extensions/claude-recall/src/mcp/server.js", "--stdio"]
+        "args": ["~/.moltbot/extensions/claude-recall/src/mcp/server.js", "--stdio"]
       }
     }
   }
