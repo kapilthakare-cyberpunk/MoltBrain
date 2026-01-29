@@ -287,11 +287,18 @@ Works with [MoltBot](https://github.com/moltbot/moltbot) (97k+ stars) - the popu
 ```bash
 # As MoltBot extension
 cd ~/.moltbot/extensions
-git clone https://github.com/nhevers/claude-recall.git
+git clone https://github.com/nhevers/claude-recall.git claude-recall
+cd claude-recall/integrations/clawd
+npm install && npm run build
+
+# Enable the plugin (required for bundled installations)
+pnpm moltbot plugins enable claude-recall
 
 # Or via MCP
 npm run mcp:start
 ```
+
+**Note:** If installing as a bundled extension (in MoltBot's `extensions/` directory), you must explicitly enable it: `pnpm moltbot plugins enable claude-recall`
 
 See [integrations/clawd/README.md](integrations/clawd/README.md) for full setup guide.
 
