@@ -1,6 +1,6 @@
 /**
  * MCP Server Implementation
- * Exposes claude-recall memory capabilities via Model Context Protocol
+ * Exposes MoltBrain memory capabilities via Model Context Protocol
  */
 
 import { createServer, Server } from 'net';
