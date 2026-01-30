@@ -19,13 +19,13 @@ function getDirname(): string {
 const _dirname = getDirname();
 
 /**
- * Simple path configuration for claude-recall
+ * Simple path configuration for MoltBrain
  * Standard paths based on Claude Code conventions
  */
 
 // Base directories
-export const DATA_DIR = SettingsDefaultsManager.get('CLAUDE_RECALL_DATA_DIR');
-// Note: CLAUDE_CONFIG_DIR is a Claude Code setting, not claude-recall, so leave as env var
+export const DATA_DIR = SettingsDefaultsManager.get('MOLTBRAIN_DATA_DIR');
+// Note: CLAUDE_CONFIG_DIR is a Claude Code setting, not MoltBrain, so leave as env var
 export const CLAUDE_CONFIG_DIR = process.env.CLAUDE_CONFIG_DIR || join(homedir(), '.claude');
 
 // Data subdirectories
@@ -35,7 +35,7 @@ export const TRASH_DIR = join(DATA_DIR, 'trash');
 export const BACKUPS_DIR = join(DATA_DIR, 'backups');
 export const MODES_DIR = join(DATA_DIR, 'modes');
 export const USER_SETTINGS_PATH = join(DATA_DIR, 'settings.json');
-export const DB_PATH = join(DATA_DIR, 'claude-recall.db');
+export const DB_PATH = join(DATA_DIR, 'moltbrain.db');
 export const VECTOR_DB_DIR = join(DATA_DIR, 'vector-db');
 
 // Claude integration paths
