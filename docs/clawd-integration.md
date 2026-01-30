@@ -1,12 +1,12 @@
-# MoltBot Integration Guide
+# OpenClaw Integration Guide
 
-This guide covers integrating claude-recall with [MoltBot](https://github.com/moltbot/moltbot), the popular personal AI assistant.
+This guide covers integrating MoltBrain with [OpenClaw](https://github.com/openclaw/openclaw), the popular personal AI assistant.
 
 ## Overview
 
-Claude Recall provides three integration methods for MoltBot:
+MoltBrain provides three integration methods for OpenClaw:
 
-1. **Extension**: Full integration with MoltBot's extension system
+1. **Extension**: Full integration with OpenClaw's extension system
 2. **Skill**: Lightweight tool-based integration
 3. **MCP Server**: Protocol-based integration for advanced setups
 
@@ -16,34 +16,34 @@ Claude Recall provides three integration methods for MoltBot:
 
 #### For Bundled Installation
 
-If you're using MoltBot from source or have cloned the repository:
+If you're using OpenClaw from source or have cloned the repository:
 
 ```bash
-# Clone into MoltBot extensions directory
-cd your-moltbot-installation/extensions
-git clone https://github.com/nhevers/claude-recall.git claude-recall
+# Clone into OpenClaw extensions directory
+cd your-openclaw-installation/extensions
+git clone https://github.com/nhevers/moltbrain.git moltbrain
 
 # Build the extension
-cd claude-recall/integrations/clawd
+cd moltbrain/integrations/openclaw
 npm install && npm run build
 ```
 
 **Important:** Enable the plugin (bundled plugins are disabled by default):
 
 ```bash
-pnpm moltbot plugins enable claude-recall
+pnpm openclaw plugins enable moltbrain
 ```
 
-Add to MoltBot config:
+Add to OpenClaw config:
 
 ```json
 {
   "plugins": {
     "entries": {
-      "claude-recall": {
+      "moltbrain": {
         "enabled": true,
         "config": {
-          "dataDir": ".claude-recall",
+          "dataDir": ".moltbrain",
           "maxMemories": 10,
           "autoCapture": true
         }
@@ -57,25 +57,25 @@ Add to MoltBot config:
 
 ```bash
 # Clone into user extensions directory
-cd ~/.moltbot/extensions
-git clone https://github.com/nhevers/claude-recall.git claude-recall
+cd ~/.openclaw/extensions
+git clone https://github.com/nhevers/moltbrain.git moltbrain
 
 # Build the extension
-cd claude-recall/integrations/clawd
+cd moltbrain/integrations/openclaw
 npm install && npm run build
 
 # Enable the plugin
-pnpm moltbot plugins enable claude-recall
+pnpm openclaw plugins enable moltbrain
 ```
 
-Restart MoltBot gateway and you're done!
+Restart OpenClaw gateway and you're done!
 
 ## How It Works
 
 ### Memory Flow
 
 ```
-User Message → MoltBot → claude-recall hooks
+User Message → OpenClaw → MoltBrain hooks
                            ↓
                     Search relevant memories
                            ↓
@@ -139,7 +139,7 @@ Before each response, claude-recall searches for relevant memories and injects t
 ```json
 {
   "skills": {
-    "claude-recall": {
+    "moltbrain": {
       "maxMemories": 10,
       "channels": ["discord", "slack"]
     }
@@ -153,9 +153,9 @@ Before each response, claude-recall searches for relevant memories and injects t
 {
   "mcp": {
     "servers": {
-      "claude-recall": {
+      "moltbrain": {
         "command": "node",
-        "args": ["~/.moltbot/extensions/claude-recall/src/mcp/server.js", "--stdio"]
+        "args": ["~/.openclaw/extensions/moltbrain/src/mcp/server.js", "--stdio"]
       }
     }
   }
