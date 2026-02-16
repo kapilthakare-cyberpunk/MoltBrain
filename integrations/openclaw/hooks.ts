@@ -3,7 +3,41 @@
  * Integrates moltbrain with OpenClaw's agent loop
  */
 
-import type { OpenClawExtensionContext, OpenClawMessage, OpenClawResponse, OpenClawSession } from './index.js';
+import type { OpenClawPluginApi } from 'openclaw/plugin-sdk';
+
+// Define the types locally since they're not exported from the plugin SDK
+interface OpenClawExtensionContext {
+  logger: {
+    info(message: string): void;
+    warn(message: string): void;
+    error(message: string): void;
+  };
+}
+
+interface OpenClawMessage {
+  id: string;
+  content: string;
+  channel: string;
+  timestamp: string;
+  userId?: string;
+  userName?: string;
+}
+
+interface OpenClawResponse {
+  id: string;
+  content: string;
+  timestamp: string;
+  userId?: string;
+  userName?: string;
+}
+
+interface OpenClawSession {
+  id: string;
+  channel: string;
+  startTime: string;
+  userId?: string;
+  userName?: string;
+}
 
 interface MemoryEntry {
   id: string;

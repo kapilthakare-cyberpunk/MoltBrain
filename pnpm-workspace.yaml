@@ -1,0 +1,9 @@
+packages:
+  - '.'
+  - 'packages/*'
+  - 'integrations/*'
+  - 'extension/*'
+  - 'plugin/*'
+  - 'examples/*'
+  - 'contrib/*'
+  - 'tools/*'

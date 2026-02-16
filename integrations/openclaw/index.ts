@@ -23,7 +23,7 @@ const moltbrainPlugin = {
           context: Type.String({ description: "The current context to find relevant memories for" }),
           maxResults: Type.Optional(Type.Number({ description: "Maximum number of memories to return", default: 10 })),
         }),
-        async execute(_toolCallId, params) {
+        async execute(_toolCallId: string, params: { context: string; maxResults?: number }) {
           // TODO: Connect to moltbrain API at http://localhost:37777
           return {
             content: [{ type: "text", text: JSON.stringify({ memories: [], count: 0 }, null, 2) }],
@@ -46,7 +46,7 @@ const moltbrainPlugin = {
           limit: Type.Optional(Type.Number({ description: "Maximum results to return", default: 20 })),
           types: Type.Optional(Type.Array(Type.String(), { description: "Filter by memory types (preference, decision, learning, context)" })),
         }),
-        async execute(_toolCallId, params) {
+        async execute(_toolCallId: string, params: { query: string; limit?: number; types?: string[] }) {
           // TODO: Connect to moltbrain API at http://localhost:37777
           return {
             content: [{ type: "text", text: JSON.stringify({ results: [], count: 0, query: params.query }, null, 2) }],
@@ -74,7 +74,7 @@ const moltbrainPlugin = {
           ], { description: "Type of memory" }),
           metadata: Type.Optional(Type.Record(Type.String(), Type.Unknown(), { description: "Additional metadata to store" })),
         }),
-        async execute(_toolCallId, params) {
+        async execute(_toolCallId: string, params: { content: string; type: 'preference' | 'decision' | 'learning' | 'context'; metadata?: Record<string, unknown> }) {
           // TODO: Connect to moltbrain API at http://localhost:37777
           const result = { id: `mem_${Date.now()}`, timestamp: new Date().toISOString(), message: "Memory saved successfully" };
           return {

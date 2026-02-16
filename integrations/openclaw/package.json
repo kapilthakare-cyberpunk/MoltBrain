@@ -25,7 +25,7 @@
     "openclaw": ">=2026.1.26"
   },
   "devDependencies": {
-    "openclaw": "workspace:*",
+    "openclaw": ">=2026.1.26",
     "typescript": "^5.9.3",
     "@sinclair/typebox": "^0.34.0"
   },

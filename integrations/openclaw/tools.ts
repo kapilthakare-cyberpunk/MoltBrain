@@ -3,7 +3,15 @@
  * Memory tools that can be invoked by OpenClaw
  */
 
-import type { OpenClawExtensionContext } from './index.js';
+// Import from the same local definitions as hooks.ts
+// Define the types locally since they're not exported from the plugin SDK
+interface OpenClawExtensionContext {
+  logger: {
+    info(message: string): void;
+    warn(message: string): void;
+    error(message: string): void;
+  };
+}
 
 interface ToolResult {
   success: boolean;
